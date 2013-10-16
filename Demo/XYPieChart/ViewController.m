@@ -18,6 +18,7 @@
 @synthesize sliceColors = _sliceColors;
 @synthesize textFields = _textFields;
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -29,6 +30,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    PieChartHandles *test = [[PieChartHandles alloc] init];
+    [test setCenter:CGPointMake(self.pieChartLeft.pieCenter.x + 10, self.pieChartLeft.pieCenter.y+self.pieChartLeft.pieRadius +5)];
+    [self.pieChartLeft addSubview:test];
+    
     self.numOfSlices = 7;
     self.slices = [NSMutableArray arrayWithCapacity:10];
     self.textFields = [NSArray arrayWithObjects:_publicInstall, _privateInstall, _timeFlooded, _amountInfiltrated, _areaFlooded, _runOff, _installTime, nil];

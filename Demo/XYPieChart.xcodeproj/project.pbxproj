@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2424BF2C1607437C0000B539 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2424BF2B1607437C0000B539 /* XYPieChart.m */; };
+		84746806180F32BC00D368BF /* PieChartHandles.m in Sources */ = {isa = PBXBuildFile; fileRef = 84746805180F32BC00D368BF /* PieChartHandles.m */; };
+		84746809180F418500D368BF /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84746808180F418500D368BF /* XYPieChart.m */; };
 		8768825C1501D2A60097BE69 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8768825B1501D2A60097BE69 /* icon.png */; };
 		87FEAA1C14F84E3000ED38A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FEAA1B14F84E3000ED38A2 /* UIKit.framework */; };
 		87FEAA1E14F84E3000ED38A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FEAA1D14F84E3000ED38A2 /* Foundation.framework */; };
@@ -21,8 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2424BF2A1607437C0000B539 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYPieChart.h; path = ../../XYPieChart/XYPieChart.h; sourceTree = "<group>"; };
-		2424BF2B1607437C0000B539 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYPieChart.m; path = ../../XYPieChart/XYPieChart.m; sourceTree = "<group>"; };
+		84746804180F32BC00D368BF /* PieChartHandles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartHandles.h; sourceTree = "<group>"; };
+		84746805180F32BC00D368BF /* PieChartHandles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartHandles.m; sourceTree = "<group>"; };
+		84746807180F418500D368BF /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		84746808180F418500D368BF /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
 		8768825B1501D2A60097BE69 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		87FEAA1714F84E3000ED38A2 /* XYPieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYPieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FEAA1B14F84E3000ED38A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -87,10 +90,12 @@
 		87FEAA2114F84E3000ED38A2 /* XYPieChart */ = {
 			isa = PBXGroup;
 			children = (
-				2424BF2A1607437C0000B539 /* XYPieChart.h */,
-				2424BF2B1607437C0000B539 /* XYPieChart.m */,
+				84746807180F418500D368BF /* XYPieChart.h */,
+				84746808180F418500D368BF /* XYPieChart.m */,
 				87FEAA2D14F84E3100ED38A2 /* ViewController.h */,
 				87FEAA2E14F84E3100ED38A2 /* ViewController.m */,
+				84746804180F32BC00D368BF /* PieChartHandles.h */,
+				84746805180F32BC00D368BF /* PieChartHandles.m */,
 				87FEAA3014F84E3100ED38A2 /* ViewController.xib */,
 				87FEAA2214F84E3100ED38A2 /* Supporting Files */,
 			);
@@ -177,7 +182,8 @@
 				87FEAA2814F84E3100ED38A2 /* main.m in Sources */,
 				87FEAA2C14F84E3100ED38A2 /* AppDelegate.m in Sources */,
 				87FEAA2F14F84E3100ED38A2 /* ViewController.m in Sources */,
-				2424BF2C1607437C0000B539 /* XYPieChart.m in Sources */,
+				84746806180F32BC00D368BF /* PieChartHandles.m in Sources */,
+				84746809180F418500D368BF /* XYPieChart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

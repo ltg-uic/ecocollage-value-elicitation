@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XYPieChart.h"
+#import "PieChartHandles.h"
 
 @interface ViewController : UIViewController <XYPieChartDelegate, XYPieChartDataSource>
 
@@ -27,4 +28,5 @@
 @property(nonatomic, strong) IBOutlet UIButton *updateButton;
 @property (strong, nonatomic) IBOutlet UIButton *resetButton;
 @property(nonatomic) NSInteger numOfSlices;
+@property(strong, nonatomic) UIView *circleView;
 @end
