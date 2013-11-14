@@ -150,9 +150,10 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
         
         self.pieRadius = MIN(frame.size.width/2, frame.size.height/2) - 10;
         self.pieCenter = CGPointMake(frame.size.width/2, frame.size.height/2);
-        self.labelFont = [UIFont boldSystemFontOfSize:MAX((int)self.pieRadius/10, 5)];
-        _labelColor = [UIColor whiteColor];
+        self.labelFont = [UIFont boldSystemFontOfSize:5];
+        _labelColor = [UIColor blackColor];
         _labelRadius = _pieRadius/2;
+        NSLog(@"Label Radius %f", self.labelRadius);
         _selectedSliceOffsetRadius = MAX(10, _pieRadius/10);
         
         _showLabel = YES;
@@ -169,6 +170,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
         self.pieCenter = center;
         self.pieRadius = radius;
     }
+    NSLog(@"Label Radius %f (init with frame)", self.labelRadius);
     return self;
 }
 
@@ -191,9 +193,10 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
         CGRect bounds = [[self layer] bounds];
         self.pieRadius = MIN(bounds.size.width/2, bounds.size.height/2) - 10;
         self.pieCenter = CGPointMake(bounds.size.width/2, bounds.size.height/2);
-        self.labelFont = [UIFont boldSystemFontOfSize:MAX((int)self.pieRadius/10, 5)];
-        _labelColor = [UIColor whiteColor];
-        _labelRadius = _pieRadius/2;
+        self.labelFont = [UIFont systemFontOfSize:5];
+        _labelColor = [UIColor blackColor];
+        _labelRadius = _pieRadius/2 - 25;
+        NSLog(@"Label Radius (init with Coder) %f", self.labelRadius);
         _selectedSliceOffsetRadius = MAX(10, _pieRadius/10);
         
         _showLabel = YES;
@@ -367,8 +370,9 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
                         }
                     }
                 }
+
             }
-            
+            for(int i =0 ; i <sliceCount; i++) NSLog(@"%f", angles[i]);
             layer.value = values[index];
             layer.percentage = (sum)?layer.value/sum:0;
             UIColor *color = nil;
@@ -450,6 +454,8 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
             CALayer *labelLayer = [[obj sublayers] objectAtIndex:0];
             CGFloat interpolatedMidAngle = (interpolatedEndAngle + interpolatedStartAngle) / 2;        
             [CATransaction setDisableActions:YES];
+            _labelRadius = _pieRadius-14;
+            //NSLog(@"Label positions %f, %f, %f", _pieCenter.x + (_labelRadius * cos(interpolatedMidAngle)), _pieCenter.y + (_labelRadius * sin(interpolatedMidAngle)), _labelRadius);
             [labelLayer setPosition:CGPointMake(_pieCenter.x + (_labelRadius * cos(interpolatedMidAngle)), _pieCenter.y + (_labelRadius * sin(interpolatedMidAngle)))];
             [CATransaction setDisableActions:NO];
         }
@@ -616,6 +622,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
 
 - (SliceLayer *)createSliceLayer
 {
+    self.labelFont = [UIFont systemFontOfSize:18];
     SliceLayer *pieLayer = [SliceLayer layer];
     [pieLayer setZPosition:0];
     [pieLayer setStrokeColor:NULL];
