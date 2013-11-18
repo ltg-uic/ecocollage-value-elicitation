@@ -34,6 +34,7 @@
 @property(nonatomic, strong) NSMutableArray *slices;
 @property(nonatomic, strong) NSArray        *sliceColors;
 @property(nonatomic, strong) NSArray *textFields;
+@property (strong, nonatomic) IBOutlet UITextField *studyID;
 @property(nonatomic, strong) IBOutlet UIButton *updateButton;
 @property (strong, nonatomic) IBOutlet UIButton *resetButton;
 @property(nonatomic) NSInteger numOfSlices;

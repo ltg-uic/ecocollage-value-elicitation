@@ -83,6 +83,7 @@
     [self setResetButton:nil];
     [self setSaveProfileButton:nil];
     [self setConcernProfiles:nil];
+    [self setStudyID:nil];
     [super viewDidUnload];
 }
 
