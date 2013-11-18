@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XYPieChart.h"
 #import "PieChartHandles.h"
+#import "simulationOutcome.h"
 
 @interface ViewController : UIViewController <XYPieChartDelegate, XYPieChartDataSource>
 
@@ -44,4 +45,5 @@
 @property (strong, nonatomic) IBOutlet UIView *concernProfileView;
 @property (strong, nonatomic) IBOutlet UITextField * waterInfiltrated;
 @property (strong, nonatomic) NSMutableArray * concernProfiles;
+@property simulationOutcome *outcome;
 @end

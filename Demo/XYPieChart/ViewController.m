@@ -18,6 +18,7 @@
 @synthesize sliceColors = _sliceColors;
 @synthesize textFields = _textFields;
 @synthesize concernProfiles = _concernProfiles;
+@synthesize outcome = _outcome;
 
 
 - (void)didReceiveMemoryWarning
@@ -131,8 +132,6 @@
     [self.pieChartLeft reloadData];
 }
 
-
-
 - (IBAction)updateSlices
 {
     for(int i = 0; i < _slices.count; i ++)
@@ -212,4 +211,12 @@
     [self.concernProfileView addSubview:imageView];
 }
 
+- (IBAction)loadScoreData:(id)sender {
+    NSURL *server = [NSURL URLWithString:@"http://polarbear.evl.uic.edu/~evl/ecocollage/"];
+    NSString *stringText = [NSString stringWithFormat:@"index.php?studyID=%@", _studyID.text];
+    NSString *content = [NSString stringWithContentsOfURL:[NSURL URLWithString: stringText relativeToURL: server] encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"stringText,%@ content: %@", stringText, content);
+    _outcome = [[simulationOutcome alloc] initWith: content];
+    
+}
 @end

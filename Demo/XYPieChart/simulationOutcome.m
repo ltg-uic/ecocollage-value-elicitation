@@ -28,7 +28,9 @@
         [_simOutcome addObject:recordDic];
         
     }
-    
+    for(int i = 0 ; i < _simOutcome.count; i++){
+        NSLog(@"%@\n\n" , [_simOutcome objectAtIndex:i]);
+    }
     return self;
 }
 @end

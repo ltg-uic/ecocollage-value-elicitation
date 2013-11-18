@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface simulationOutcome : NSObject
+-(id) initWith: (NSString*)retrievedData;
 @property NSMutableArray * simOutcome;
 @end
