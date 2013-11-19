@@ -22,14 +22,17 @@
     _simOutcome = [[NSMutableArray alloc] initWithCapacity:captureData.count];
     for( int i = 0; i < captureData.count; i++){
         NSString *recordText = [ [captureData objectAtIndex:i ] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        NSLog(@"%@", recordText);
-        NSArray *record = [recordText componentsSeparatedByString: @"\t"];
-        NSMutableDictionary *recordDic =[[NSMutableDictionary alloc] initWithObjects:record forKeys:keyArray];
-        [_simOutcome addObject:recordDic];
+        NSLog(@"record text of line %d %@", i, recordText);
+        NSMutableArray *record = [[recordText componentsSeparatedByString: @" \t"] mutableCopy];
+        NSLog(@"recordNumber: %d %@", record.count, record);
+        if(record.count == keyArray.count){
+            NSMutableDictionary *recordDic =[[NSMutableDictionary alloc] initWithObjects:record forKeys:keyArray];
+            [_simOutcome addObject:recordDic];
+        }
         
     }
     for(int i = 0 ; i < _simOutcome.count; i++){
-        NSLog(@"%@\n\n" , [_simOutcome objectAtIndex:i]);
+        NSLog(@"outcome i:%d \n %@\n\n" , i, [_simOutcome objectAtIndex:i]);
     }
     return self;
 }
